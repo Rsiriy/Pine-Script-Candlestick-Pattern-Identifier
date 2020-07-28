@@ -1,0 +1,237 @@
+// © RSirigiri 
+
+//@version=4
+study("Candlestick Pattern Identifier", overlay = true)
+
+//"open" is the share price at the start of market hours 
+open_today = open 
+open_1_day_ago = open[1]
+open_2_days_ago = open[2]
+open_3_days_ago = open[3]
+
+//"close" is the share price at the end of market hours 
+close_today = close
+close_1_day_ago = close[1]
+close_2_days_ago = close[2]
+close_3_days_ago = close[3]
+
+//"high" is the highest a share price has gone during market hours 
+high_today = high
+high_1_day_ago = high[1]
+high_2_days_ago = high[2]
+high_3_days_ago = high[3]
+
+//"low" is the lowest a share price has gone during market hours 
+low_today = low 
+low_1_day_ago = low[1] 
+low_2_days_ago = low[2]
+low_3_days_ago = low[3]
+
+//Green candles signify a time period where the share price has gone up 
+green_candle_today = open < close
+green_candle_1_day_ago = open[1] < close[1]
+green_candle_2_days_ago = open[2] < close[2]
+green_candle_3_days_ago = open[3] < close[3]
+
+//Red candles signify a time period where the share price has gone down 
+red_candle_today = open > close
+red_candle_1_day_ago = open[1] > close[1]
+red_candle_2_days_ago = open[2] > close[2]
+red_candle_3_days_ago = open[3] > close[3]
+
+doji_1_day_ago_green = (green_candle_1_day_ago) and 
+ close_1_day_ago - open_1_day_ago <= (close_1_day_ago + open_1_day_ago) * 0.001 
+ 
+doji_1_day_ago_red = (red_candle_1_day_ago) and 
+ open_1_day_ago - close_1_day_ago <= (open_1_day_ago + close_1_day_ago) * 0.001 
+
+Inverted_Hammer = (red_candle_1_day_ago and green_candle_today) and 
+ (close_today - open_today >= open_today - low_today) and 
+ (close_today <= (high_today + low_today) * 0.5) and 
+ (close_today <= low_1_day_ago)
+plotshape(Inverted_Hammer, title = "Inverted Hammer", text = "·\n·\nInverted Hammer", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Morning_Star = (red_candle_2_days_ago and green_candle_1_day_ago and green_candle_today) and 
+ (close_1_day_ago <= close_2_days_ago and close_1_day_ago <= open_today) and 
+ (high_1_day_ago - low_1_day_ago < high_2_days_ago - low_2_days_ago) and
+ (high_1_day_ago - low_1_day_ago < high_today - low_today) and 
+ (close_today - open_today > open_2_days_ago - close_2_days_ago)
+plotshape(Morning_Star, title = "Morning Star", text = "·\n·\n·\nMorning\nStar", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = -1)
+
+Evening_Star = (green_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (close_1_day_ago >= close_2_days_ago and close_1_day_ago >= open_today) and 
+ (high_1_day_ago - low_1_day_ago < high_2_days_ago - low_2_days_ago) and
+ (high_1_day_ago - low_1_day_ago < high_today - low_today) and 
+ (open_today - close_today > close_2_days_ago - open_2_days_ago)
+plotshape(Evening_Star, title = "Evening Star", text = "Evening\nStar\n·\n·\n·", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = -1)
+
+Bearish_Engulfing = (green_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and 
+ (open_today >= high_1_day_ago and close_today <= low_1_day_ago)
+plotshape(Bearish_Engulfing, title = "Bearish Engulfing", text = "Bearish\nEngulfing\n·\n·️", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red)
+
+Deliberation = (green_candle_2_days_ago and green_candle_1_day_ago and green_candle_today) and 
+ (close_2_days_ago <= open_1_day_ago and close_1_day_ago <= open_today) and 
+ (high_2_days_ago - low_2_days_ago >= high_1_day_ago - low_1_day_ago) and 
+ (high_1_day_ago - low_1_day_ago >= high_today - low_today) and 
+ (close_2_days_ago - open_2_days_ago >= close_1_day_ago - open_1_day_ago) and 
+ (close_1_day_ago - open_1_day_ago >= close_today - open_today)
+plotshape(Deliberation, title = "Deliberation", text = "Deliberation", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Three_White_Soldiers = (green_candle_2_days_ago and green_candle_1_day_ago and green_candle_today) and 
+ (open_1_day_ago <= close_2_days_ago and open_today <= close_1_day_ago) and 
+ (open_2_days_ago <= low_1_day_ago and open_1_day_ago <= low_today) and 
+ (high_2_days_ago <= close_1_day_ago and high_1_day_ago <= close_today) 
+plotshape(Three_White_Soldiers, title = "Three White Soldiers", text = "·\n·\n·\nThree\nWhite\nSoldiers", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Three_Black_Crows = (red_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (open_1_day_ago >= close_2_days_ago and open_today >= close_1_day_ago) and 
+ (open_2_days_ago >= high_1_day_ago and open_1_day_ago >= high_today) and 
+ (low_2_days_ago >= close_1_day_ago and low_1_day_ago >= close_today) 
+plotshape(Three_Black_Crows, title = "Three Black Crows", text = "Three\nBlack\nCrows\n·\n·\n·", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Above_The_Stomach = (red_candle_3_days_ago and red_candle_2_days_ago and red_candle_1_day_ago and green_candle_today) and
+ (high_1_day_ago <= close_today) and (close_1_day_ago <= open_today) and (open_1_day_ago >= open_today)
+plotshape(Above_The_Stomach, title = "Above The Stomach", text = "Above\nThe\nStomach", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Below_The_Stomach = (green_candle_3_days_ago and green_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and
+ (low_1_day_ago >= close_today) and (open_1_day_ago <= open_today) and (close_1_day_ago >= open_today)
+plotshape(Below_The_Stomach, title = "Below The Stomach", text = "Below\nThe\nStomach", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Bullish_Belt_Hold = (red_candle_1_day_ago and green_candle_today) and 
+ (open_today == low_today and open_today <= low_1_day_ago) and 
+ (close_today - open_today >= high_today - close_today) and 
+ (close_today <= open_1_day_ago)
+plotshape(Bullish_Belt_Hold, title = "Bullish Belt Hold", text = "Bullish\nBelt\nHold", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Bearish_Belt_Hold = (green_candle_1_day_ago and red_candle_today) and 
+ (high_today == open_today and open_today >= high_1_day_ago) and 
+ (open_today - close_today >= close_today - low_today) and 
+ (close_today <= close_1_day_ago) and (close_today >= open_1_day_ago)
+plotshape(Bearish_Belt_Hold, title = "Bearish Belt Hold", text = "Bearish\nBelt\nHold", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+//Doji_Star = (green_candle_1_day_ago) and 
+// (open_today - close_today <= 0.10) and (close_today - open_today <= 0.10) and 
+// (low_today >= high_1_day_ago)
+//plotshape(Doji_Star, title = "Doji Star", text = "Doji Star", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Three_Outside_Up = (red_candle_3_days_ago and red_candle_2_days_ago and green_candle_1_day_ago and green_candle_today) and
+ (open_1_day_ago <= low_2_days_ago and close_1_day_ago >= high_2_days_ago) and 
+ (close_today >= close_1_day_ago) 
+plotshape(Three_Outside_Up, title = "Three Outside Up", text = "Three\nOutside\nUp", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Three_Outside_Down = (green_candle_3_days_ago and green_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and
+ (open_1_day_ago >= high_2_days_ago and close_1_day_ago <= low_2_days_ago) and 
+ (close_today <= close_1_day_ago) 
+plotshape(Three_Outside_Down, title = "Three Outside Down", text = "Three\nOutside\nDown", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Three_Inside_Up = (red_candle_3_days_ago and red_candle_2_days_ago and green_candle_1_day_ago and green_candle_today) and
+ (close_2_days_ago <= low_1_day_ago and open_2_days_ago >= high_1_day_ago) and 
+ (open_1_day_ago <= open_today) and (high_1_day_ago <= close_today)
+plotshape(Three_Inside_Up, title = "Three Inside Up", text = "Three\nInside\nUp", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Three_Inside_Down = (green_candle_3_days_ago and green_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and
+ (close_2_days_ago >= high_1_day_ago and open_2_days_ago <= low_1_day_ago) and 
+ (close_today <= low_1_day_ago) and (open_today <= open_1_day_ago)
+plotshape(Three_Inside_Down, title = "Three Inside Down", text = "Three\nInside\nDown", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Two_Black_Gapping = (green_candle_3_days_ago and green_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (high_1_day_ago < low_2_days_ago) and (open_today <= close_1_day_ago)
+plotshape(Two_Black_Gapping, title = "Two Black Gapping", text = "Two\nBlack\nGapping", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Rising_Window = (green_candle_today) and 
+ (low_today > high_1_day_ago) and 
+ (close_today - open_today > high_1_day_ago - low_1_day_ago) and 
+ (low_today - high_1_day_ago > close_1_day_ago - open_1_day_ago) and 
+ (low_today - high_1_day_ago > open_1_day_ago - close_1_day_ago)
+plotshape(Rising_Window, title = "Rising Window", text = "Rising\nWindow", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Falling_Window = (red_candle_today) and 
+ (high_today < low_1_day_ago) and 
+ (open_today - close_today > high_1_day_ago - low_1_day_ago) and 
+ (low_1_day_ago - high_today > high_1_day_ago - low_1_day_ago) 
+plotshape(Falling_Window, title = "Falling Window", text = "Falling\nWindow", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Three_Line_Strike_Bullish = (green_candle_3_days_ago and green_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and 
+ (close_3_days_ago <= open_2_days_ago) and (close_2_days_ago <= open_1_day_ago) and 
+ (open_today > close_1_day_ago) and (close_today <= open_3_days_ago)
+plotshape(Three_Line_Strike_Bullish, title = "Three Line Strike Bullish", text = "Three\nLine\nStrike\nBullish", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Three_Line_Strike_Bearish = (red_candle_3_days_ago and red_candle_2_days_ago and red_candle_1_day_ago and green_candle_today) and 
+ (close_3_days_ago >= open_2_days_ago) and (close_2_days_ago >= open_1_day_ago) and 
+ (open_today <= close_1_day_ago) and (close_today >= open_3_days_ago)
+plotshape(Three_Line_Strike_Bearish, title = "Three Line Strike Bearish", text = "Three\nLine\nStrike\nBearish", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Abandoned_Baby_Bullish = (red_candle_2_days_ago and doji_1_day_ago_green and green_candle_today) and 
+ (high_1_day_ago < low_2_days_ago) and (high_1_day_ago < low_today)
+plotshape(Abandoned_Baby_Bullish, title = "Abandoned Baby Bullish", text = "Abandoned\nBaby\nBullish", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = -1)
+
+Abandoned_Baby_Bearish = (green_candle_2_days_ago and doji_1_day_ago_red and red_candle_today) and 
+ (low_1_day_ago > high_2_days_ago) and (low_1_day_ago > high_today)
+plotshape(Abandoned_Baby_Bearish, title = "Abandoned Baby Bullish", text = "Abandoned\nBaby\nBullish", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = -1)
+
+Separating_Lines_Bullish = (red_candle_1_day_ago and green_candle_today) and 
+ (open_today == open_1_day_ago) and (close_1_day_ago < low_today) and 
+ (high_1_day_ago < close_today)
+plotshape(Separating_Lines_Bullish, title = "Separating Lines Bullish", text = "Separating\nLines\nBullish", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Separating_Lines_Bearish = (green_candle_1_day_ago and red_candle_today) and 
+ (open_today == open_1_day_ago) and (close_1_day_ago > high_today) and 
+ (low_1_day_ago > close_today)
+plotshape(Separating_Lines_Bearish, title = "Separating Lines Bearish", text = "Separating\nLines\nBearish", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Morning_Doji_Star = (red_candle_2_days_ago and doji_1_day_ago_green or doji_1_day_ago_red and green_candle_today) and 
+ (close_2_days_ago >= high_1_day_ago) and (open_today >= high_1_day_ago)
+plotshape(Morning_Doji_Star, title = "Morning Doji Star", text = "Morning\nDoji\nStar\nBullish", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = -1)
+
+Evening_Doji_Star = (green_candle_2_days_ago and doji_1_day_ago_red and red_candle_today) and 
+ (close_2_days_ago <= low_1_day_ago) and (open_today <= low_1_day_ago)
+plotshape(Evening_Doji_Star, title = "Evening Doji Star", text = "Evening\nDoji\nStar\nBearish", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = -1)
+
+Three_Stars_In_The_South = (red_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (close_2_days_ago >= (high_2_days_ago + low_2_days_ago) / 2) and 
+ (low_2_days_ago <= low_1_day_ago) and (low_1_day_ago <= close_today) and 
+ (high_1_day_ago >= open_today) and (open_today - close_today >= high_today - open_today) and 
+ (open_today - close_today >= open_today - low_today)
+plotshape(Three_Stars_In_The_South, title = "Three Stars In The South", text = "Three\nStars\nIn\nThe\nSouth", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Identical_Three_Crows = (red_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (close_2_days_ago >= open_1_day_ago) and (close_1_day_ago >= open_today) and 
+ (low_2_days_ago <= open_1_day_ago) and (low_1_day_ago <= open_today) and 
+ (open_2_days_ago >= high_1_day_ago) and (open_1_day_ago >= high_today) and 
+ (low_2_days_ago >= close_1_day_ago) and (low_1_day_ago >= open_today)
+plotshape(Identical_Three_Crows, title = "Identical Three Crows", text = "Identical\nThree\nCrows", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Piercing = (red_candle_1_day_ago and green_candle_today) and 
+ (low_1_day_ago > open_today) and 
+ ((close_1_day_ago + open_1_day_ago) * 0.5) <= (close_today) and 
+ (open_1_day_ago > close_today) and (high_today < open_1_day_ago)
+plotshape(Piercing, title = "Piercing", text = "Piercing", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Upside_Tasuki_Gap = (green_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and 
+ (high_2_days_ago < low_1_day_ago) and 
+ (close_1_day_ago > open_today) and 
+ (open_1_day_ago > close_today) and 
+ (high_2_days_ago < close_today)
+plotshape(Upside_Tasuki_Gap, title = "Upside Tasuki Gap", text = "Upside\nTasuki\nGap", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Concealing_Baby_Swallow = (red_candle_3_days_ago and red_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (open_3_days_ago == high_3_days_ago) and (close_3_days_ago == low_3_days_ago) and 
+ (open_2_days_ago == high_2_days_ago) and (close_2_days_ago == low_2_days_ago) and 
+ (open_1_day_ago <= close_2_days_ago) and (high_1_day_ago > close_1_day_ago) and 
+ (high_1_day_ago < high_today) and (low_1_day_ago > low_today)
+plotshape(Concealing_Baby_Swallow, title = "Concealing Baby Swallow", text = "Concealing\nBaby\nSwallow", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Stick_Sandwich = (red_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and 
+ (close_2_days_ago < open_1_day_ago) and (close_today < open_1_day_ago) and 
+ (open_2_days_ago > close_1_day_ago) and (open_today > close_1_day_ago)
+plotshape(Stick_Sandwich, title = "Stick Sandwich", text = "Stick\nSandwich", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
+
+Dark_Cloud_Cover = (green_candle_3_days_ago and green_candle_2_days_ago and green_candle_1_day_ago and red_candle_today) and 
+ (high_1_day_ago <= open_today) and (close_today <= (high_1_day_ago + low_1_day_ago) * 0.5) and 
+ (open_1_day_ago <= close_today)
+plotshape(Dark_Cloud_Cover, title = "Dark Cloud Cover", text = "Dark\nCloud\nCover", textcolor = color.red, style = shape.triangledown, size = size.auto, location = location.abovebar, color = color.red, offset = 0)
+
+Takuri_Line = (red_candle_3_days_ago and red_candle_2_days_ago and red_candle_1_day_ago and red_candle_today) and 
+ (high_today - open_today) <= (open_today - close_today) and 
+ (open_today - close_today) * 2.5 <= (close_today - low_today)
+plotshape(Takuri_Line, title = "Takuri Line", text = "Takuri\nLine", textcolor = color.green, style = shape.triangleup, size = size.auto, location = location.belowbar, color = color.green, offset = 0)
