@@ -24,13 +24,16 @@ patterns with high frequency and high percentage of success.
 
 ## How it Works 
 
+##### Criteria 
+
 The indicator holds formulas I created for 25 candlestick patterns and outputs them onto a chart in TradingView for any stock across any timeframe.
 All candlestick patterns were selected from Encyclopedia of Candlestick Patterns based on the criteria below 
 
-- Probability of success: 66% or higher across either Bull or Bear markets 
-- Frequency: 10 or higher 
-- Simplicity: 4 candles or less 
+- Probability of success: 66% or higher in Bull or Bear markets (Ensures 2/3 trades made on pattern have a chance of success)
+- Frequency: 10 or higher (Avoids rare patterns with small sample size)
+- Simplicity: 4 candles or less (Formulas with increased complexity will create less signals)
 
+##### Formulas
 
 
 ## Examples 
