@@ -35,6 +35,15 @@ All candlestick patterns were selected from Encyclopedia of Candlestick Patterns
 
 ##### Formulas
 
+I created formulas using comparison operators on the "open", "close", "high", and "low" properties of a candlestick. 
+
+For instance, the formula "green_candle = (open < close)" would flag candles that look like the below. 
+
+![Alt text](/images/greencandle.png) 
+
+Likewise, the formula "red_candle = (open > close)" would flag candles that look like the below. 
+
+![Alt text](/images/redcandle.png)
 
 ## Examples 
 
