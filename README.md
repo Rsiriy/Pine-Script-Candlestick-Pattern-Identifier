@@ -3,11 +3,15 @@
 The Candlestick Pattern Identifier is a technical indicator developed using Pine Script for TradingView. 
 
 ## Table of Contents
-
-- [Introduction](#introduction)
-- [How it Works](#features)
-- [Examples](#feedback)
-- [Installation](#Installation)
+ 
+1. [Introduction](#introduction)
+2. [How it Works](#how-it-works)
+    1. [Criteria](#criteria)
+    2. [Formulas](#formulas)
+3. [Examples](#examples)
+    1. [One Candle Pattern](#One-Candle-Pattern)
+    2. [Formulas](#formulas)
+4. [Installation](#installation)
 
 ## Introduction 
 
@@ -19,21 +23,20 @@ one of these tools I programmed to asisst me with my stock trading.
 
 The Candlestick Pattern Identifier is a technical indicator I developed using research by Thomas Burkowski in his book "Encyclopedia of Candlestick Patterns".
 In his research, Burkowski researched candlestick patterns based on their efficiency and frequency and created a comprehesnive list of top performing patterns 
-across both Bull (upward market trend) and Bear (downward market trend) markets. When using Burkowski's research, I created my own set of parameters to look for
-patterns with high frequency and high percentage of success. 
+across both upward and downward markets. When using Burkowski's research, I created my own set of parameters to look for patterns with high frequency and high percentage of success. 
 
 ## How it Works 
 
-##### Criteria 
+### Criteria 
 
 The indicator holds formulas I created for 25 candlestick patterns and outputs them onto a chart in TradingView for any stock across any timeframe.
 All candlestick patterns were selected from Encyclopedia of Candlestick Patterns based on the criteria below 
 
-- Probability of success: 66% or higher in Bull or Bear markets (Ensures 2/3 trades made on pattern have a chance of success)
+- Probability of success: 66% or higher in up or down markets (Ensures 2/3 trades made on pattern have a chance of success)
 - Frequency: 10 or higher (Avoids rare patterns with small sample size)
 - Simplicity: 4 candles or less (Formulas with increased complexity will create less signals)
 
-##### Formulas
+### Formulas
 
 I created formulas using comparison operators on the "open", "close", "high", and "low" properties of a candlestick. 
 
@@ -45,6 +48,25 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 
 ![Alt text](/images/redcandle.png)
 
+*Note that the "High" and "Low", regardless of candle properties, are absolutes and will always be above or below the candle body*
+
 ## Examples 
+
+The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
+in each example for easier readibility.  
+
+### One Candle Pattern  
+
+![Alt text](/images/RisingWindowCode.png) 
+
+The first line designates the property of the candle being flagged. In this case I am looking for green candles (price going up) 
+
+The second line defines that the entire candle from yesterday is smaller than the body of today's candle. This was done to strengthen the original 
+definition of a rising window and producer stronger and more valid signals. 
+
+The third line defines that the highest point from yesterday is less than the lowest point of today to establish a gap between the two candles.  
+
+![Alt text](/images/RisingWindowExample.png) 
+![Alt text](/images/RisingWindowTR.png) 
 
 ## Installation 
