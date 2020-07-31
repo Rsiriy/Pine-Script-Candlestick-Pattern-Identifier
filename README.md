@@ -10,7 +10,6 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
     2. [Formulas](#formulas)
 3. [Examples](#examples)
     1. [One Candle Pattern](#One-Candle-Pattern)
-    2. [Formulas](#formulas)
 4. [Installation](#installation)
 
 ## Introduction 
