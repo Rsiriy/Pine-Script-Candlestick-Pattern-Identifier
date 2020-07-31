@@ -60,7 +60,7 @@ The Rising window is a one candle pattern with 75% success in markets trending u
 below shows an idealized representation of what this pattern looks like. The defining characteristic of this pattern is that the second candle is significantly 
 above the candle before it. 
 
-<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">  
+<p align="center" src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">
 
 ##### Code for Rising Window 
 
