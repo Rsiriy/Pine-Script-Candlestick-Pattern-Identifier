@@ -31,9 +31,9 @@ across both upward and downward markets. When using Burkowski's research, I crea
 The indicator holds formulas I created for 25 candlestick patterns and outputs them onto a chart in TradingView for any stock across any timeframe.
 All candlestick patterns were selected from Encyclopedia of Candlestick Patterns based on the criteria below 
 
-- Probability of success: 66% or higher in up or down markets (Ensures 2/3 trades made on pattern have a chance of success)
-- Frequency: 10 or higher (Avoids rare patterns with small sample size)
-- Simplicity: 4 candles or less (Formulas with increased complexity will create less signals)
+- Probability of success: 66% or higher in up or down markets **(Ensures 2/3 trades made on pattern have a chance of success)**
+- Frequency: 10 or higher **(Avoids rare patterns with small sample size)**
+- Simplicity: 4 candles or less **(Formulas with increased complexity will create less signals)**
 
 ### Formulas
 
@@ -52,19 +52,28 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 ## Examples 
 
 The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
-in each example for easier readibility.  
+in each example for easier readibility. Patterns designated as "one candle", for example, are patterns that only require one candle to be detected. 
 
-### One Candle Pattern  
+### One Candle Pattern - Rising Window   
 
-![Alt text](/images/RisingWindowCode.png) 
+The Rising window is a one candle pattern with 75% success in markets trending upward and 72% in markets trending downward as per Burkowski. The picture
+below shows an idealized representation of what this pattern looks like. The defining characteristic of this pattern is that the second candle is significantly 
+above the candle before it. 
 
-The first line designates the property of the candle being flagged. In this case I am looking for green candles (price going up) 
+<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">  
+
+The picture below shows my code used to detect this pattern. The first line shows the declaration for the candle I am looking for, 
+in this case I am looking for green candles (price going up).
 
 The second line defines that the entire candle from yesterday is smaller than the body of today's candle. This was done to strengthen the original 
 definition of a rising window and producer stronger and more valid signals. 
 
 The third line defines that the highest point from yesterday is less than the lowest point of today to establish a gap between the two candles.  
 
-<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">.           <img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300">
+![Alt text](/images/RisingWindowCode.png) 
+
+The picture below shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 they day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
+
+<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300">
 
 ## Installation 
