@@ -41,11 +41,11 @@ I created formulas using comparison operators on the "open", "close", "high", an
 
 For instance, the formula "green_candle = (open < close)" would flag candles that look like the below. 
 
-![Alt text](/images/greencandle.png) 
+<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/greencandle.png?raw=true" width="100" height="300">
 
 Likewise, the formula "red_candle = (open > close)" would flag candles that look like the below. 
 
-![Alt text](/images/redcandle.png)
+<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/redcandle.png?raw=true" width="150" height="245">
 
 *Note that the "High" and "Low", regardless of candle properties, are absolutes and will always be above or below the candle body*
 
