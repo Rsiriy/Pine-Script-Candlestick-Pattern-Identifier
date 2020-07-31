@@ -65,7 +65,6 @@ definition of a rising window and producer stronger and more valid signals.
 
 The third line defines that the highest point from yesterday is less than the lowest point of today to establish a gap between the two candles.  
 
-![Alt text](/images/RisingWindowExample.png) 
-![Alt text](/images/RisingWindowTR.png) 
+<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">.           <img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300">
 
 ## Installation 
