@@ -62,6 +62,10 @@ above the candle before it.
 
 <img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300">  
 
+##### Code for Rising Window 
+
+![Alt text](/images/RisingWindowCode.png) 
+
 The picture below shows my code used to detect this pattern. The first line shows the declaration for the candle I am looking for, 
 in this case I am looking for green candles (price going up).
 
@@ -70,10 +74,10 @@ definition of a rising window and producer stronger and more valid signals.
 
 The third line defines that the highest point from yesterday is less than the lowest point of today to establish a gap between the two candles.  
 
-![Alt text](/images/RisingWindowCode.png) 
-
-The picture below shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 they day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
+##### Example of Rising Window in Trading View 
 
 <img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300">
+
+The picture above shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 they day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
 
 ## Installation 
