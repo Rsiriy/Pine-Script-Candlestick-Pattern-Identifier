@@ -9,10 +9,18 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
     1. [Criteria](#criteria)
     2. [Formulas](#formulas)
 3. [Examples](#examples)
-    1. [One Candle Pattern](#One-Candle-Pattern)
-    2. [Two Candle Pattern](#Two-Candle-Pattern)
-    3. [Three Candle Pattern](#Three-Candle-Pattern)
-    4. [Four Candle Pattern](#Four-Candle-Pattern)
+    1. [One Candle Pattern](#one-candle-pattern)
+          1. [Code for Rising Window](#code-for-rising-window)
+          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-trading-view)
+    2. [Two Candle Pattern](#two-candle-pattern)
+          1. [Code for Bullish Belt Hold](#code-for-rising-window)
+          2. [Example of Bullish Belt Hold in Trading View](#example-of-bullish-belt-hold-in-trading-view)
+    3. [Three Candle Pattern](#three-candle-pattern)
+          1. [Code for Deliberation](#code-for-rising-window)
+          2. [Example of Deliberation in Trading View](#example-of-deliberation-in-trading-view)
+    4. [Four Candle Pattern](#four-candle-pattern)
+          1. [Code for Rising Window](#code-for-rising-window)
+          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-trading-view)
 4. [Installation](#installation)
 
 ## Introduction 
@@ -57,7 +65,7 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
 in the code each example for easier readibility. Patterns designated as "one candle", for example, are patterns that only require one candle to be detected. 
 
-### One Candle Pattern - Rising Window   
+### One Candle Pattern
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300"></p>
 
@@ -80,7 +88,7 @@ The third line defines that the highest point from yesterday is less than the lo
 
 The picture above shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 the day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
 
-### Two Candle Pattern - Bullish Belt Hold  
+### Two Candle Pattern
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/BullishBeltHoldExample.png?raw=true" width="150" height="300"></p>
 
@@ -102,9 +110,9 @@ The fourth line defines that the open of today's candle must be lower than the l
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/BullishBeltHoldTR.png?raw=true" width="150" height="300"></p>
 
-The example above is an example of a Bullish Belt Hold flagged by my indicator in RingCentral ($RNG) stock. RNG closed at $236.51 the day it was flagged and closed at $253.11 the next day, representing a gain of 7.02%. A buy order at $236.51 would've made for a profitable trade. 
+The example above is of a Bullish Belt Hold flagged by my indicator in RingCentral ($RNG) stock. RNG closed at $236.51 the day it was flagged and closed at $253.11 the next day, representing a gain of 7.02%. A buy order at $236.51 would've made for a profitable trade. 
 
-### Three Candle Pattern - Deliberation
+### Three Candle Pattern
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/DeliberationExample.png?raw=true" width="150" height="300"></p>
 
@@ -124,7 +132,9 @@ The third and fourth line define that the high point of the preceeding day candl
 
 ##### Example of Deliberation in Trading View 
 
-<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/DeliberationTR.png?raw=true"></p>
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/DeliberationTR.png?raw=true" width="150" height="300"></p>
 
+The example of the Deliberation pattern above was flagged by my indicator in Las Vegas Sands ($LVS) stock. The uptrend halted for two days after the 
+pattern was flagged but continued to climb higher. The price of LVS shares were $64.15 the day it was flagged and $68.70 at the very last candle which represents a gain of approximately 7% and would've made for a profitable trade. 
 
 ## Installation 
