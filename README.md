@@ -10,6 +10,9 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
     2. [Formulas](#formulas)
 3. [Examples](#examples)
     1. [One Candle Pattern](#One-Candle-Pattern)
+    2. [Two Candle Pattern](#Two-Candle-Pattern)
+    3. [Three Candle Pattern](#Three-Candle-Pattern)
+    4. [Four Candle Pattern](#Four-Candle-Pattern)
 4. [Installation](#installation)
 
 ## Introduction 
@@ -37,15 +40,15 @@ All candlestick patterns were selected from Encyclopedia of Candlestick Patterns
 
 ### Formulas
 
-I created formulas using comparison operators on the "open", "close", "high", and "low" properties of a candlestick. 
+I created formulas using comparison operators on the "open", "close", "high", and "low" properties of a candlestick. Green candles signify a time period in which the price of a stock went higher. 
 
 For instance, the formula "green_candle = (open < close)" would flag candles that look like the below. 
 
-<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/greencandle.png?raw=true" width="100" height="300">
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/greencandle.png?raw=true" width="100" height="300"></p>
 
-Likewise, the formula "red_candle = (open > close)" would flag candles that look like the below. 
+Likewise, the formula "red_candle = (open > close)" would flag candles that look like the below. Red candles signify a time period in which the price of a stock went lower. 
 
-<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/redcandle.png?raw=true" width="150" height="245">
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/redcandle.png?raw=true" width="150" height="245"></p>
 
 *Note that the "High" and "Low", regardless of candle properties, are absolutes and will always be above or below the candle body*
 
@@ -56,28 +59,47 @@ in each example for easier readibility. Patterns designated as "one candle", for
 
 ### One Candle Pattern - Rising Window   
 
-The Rising window is a one candle pattern with 75% success in markets trending upward and 72% in markets trending downward as per Burkowski. The picture
-below shows an idealized representation of what this pattern looks like. The defining characteristic of this pattern is that the second candle is significantly 
-above the candle before it. 
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300"></p>
 
-<div style="text-align:center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowExample.png?raw=true" width="150" height="300"></div>
+The Rising window is a one candle pattern with 75% success in markets trending upward and 72% in markets trending downward as per Burkowski. The picture
+above shows an idealized representation of what this pattern looks like. The defining characteristic of this pattern is that the second candle is significantly 
+above the candle before it. 
 
 ##### Code for Rising Window 
 
-![Alt text](/images/RisingWindowCode.png) 
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowCode.png?raw=true"></p>
 
-The picture below shows my code used to detect this pattern. The first line shows the declaration for the candle I am looking for, 
-in this case I am looking for green candles (price going up).
+The first line shows the declaration for the candle I am looking for, in this case I am looking for green candles (price going up).
 
 The second line defines that the entire candle from yesterday is smaller than the body of today's candle. This was done to strengthen the original 
 definition of a rising window and producer stronger and more valid signals. 
 
-The third line defines that the highest point from yesterday is less than the lowest point of today to establish a gap between the two candles.  
+The third line defines that the highest point from yesterday is less than the lowest point of today, establishing a gap between the two candles.  
 
 ##### Example of Rising Window in Trading View 
 
-<img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300">
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300"></p>
 
-The picture above shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 they day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
+The picture above shows an example of a Rising Window that my indicator caught in JP Morgan ($JPM) stock. JPM closed at $95.82 the day it was flagged and closed at $101.37 the next day, representing a 5.5% gain. A buy order placed at $95.82 would've made for profitable trade.  
+
+### Two Candle Pattern - Bullish Belt Hold  
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/BullishBeltHoldExample.png?raw=true" width="150" height="300"></p>
+
+The Bullish Belt Hold is a two candle pattern with 71% success in markets trending upward and downward. The "Bullish" in its name represents the sentiment behind this formation as Bullish markets are markets trending upward. The defining characteristics of this are: The current day candle must open below the preceeding day candle and close above the midpoint of the preceeding day candle. 
+
+### Code for Bullish Belt Hold 
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/BullishBeltHoldCode.png?raw=true"></p>
+
+The first line shows the declarations for the candles I am looking for. In this case I'm looking for a red candle 1 day ago and a green candle today.
+
+The second line defines that today's close must be greater than or equal to the midpoint of the previous day candle. 
+
+The third line defines that the close must be less than the yesterday's open. This, in combination with the line above, create the upper limit for today's candle as being in between the midpoint and the open of yesteradays candle. 
+
+The fourth line defines that the open of today's candle must be lower than the lowest point of yesterdays candle which defines the lower limit for today's candle. 
+
+##### Example of Bullish Belt Hold in Trading View 
 
 ## Installation 
