@@ -19,8 +19,8 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
           1. [Code for Deliberation](#code-for-rising-window)
           2. [Example of Deliberation in Trading View](#example-of-deliberation-in-trading-view)
     4. [Four Candle Pattern](#four-candle-pattern)
-          1. [Code for Rising Window](#code-for-rising-window)
-          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-trading-view)
+          1. [Code for Three Line Strike](#code-for-three-line-strike)
+          2. [Example of Three Line Strike in Trading View](#example-of-three-line-strike-in-trading-view)
 4. [Installation](#installation)
 
 ## Introduction 
@@ -136,5 +136,27 @@ The third and fourth line define that the high point of the preceeding day candl
 
 The example of the Deliberation pattern above was flagged by my indicator in Las Vegas Sands ($LVS) stock. The uptrend halted for two days after the 
 pattern was flagged but continued to climb higher. The price of LVS shares were $64.15 the day it was flagged and $68.70 at the very last candle which represents a gain of approximately 7% and would've made for a profitable trade. 
+
+### Four Candle Pattern
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeExample.png?raw=true" width="150" height="300"></p>
+
+The Three Line Strike, commonly known as a continaution pattern, is actually defined as a reversal pattern according to Bulkowski with 65% success in upward markets and 83% in downward markets. The defining characteristic of this pattern is that the most recent candle complete engulfs the preceeding three candles. 
+
+##### Code for Three Line Strike 
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeCode.png?raw=true"></p>
+
+The first line shows the declaration for the candles I am looking for. In this case, I'm looking for three green candles in the preceeding a red candle. 
+
+The second, third, and fourth line establish the uptrend by stating that the close of the preceeding day is less than open of the day after. 
+
+The fifth line defines the condition for the most recent candle to be much larger than the three candles prior to it by stating that the lower point from three days ago is greater than the lower point today.  
+
+##### Example of Three Line Strike in Trading View 
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeTR.png?raw=true" width="150" height="300"></p>
+
+Above is an example my indicator caught in Zoom Video Communications Inc. ($ZM) stock. ZM closed at $260.30 the day it was flagged and dropped to $246.54 four days later. A sell order at $260.30 would've made for a profitable trade. 
 
 ## Installation 
