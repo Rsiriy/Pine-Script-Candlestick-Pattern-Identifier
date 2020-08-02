@@ -5,10 +5,10 @@ The Candlestick Pattern Identifier is a technical indicator I developed using Pi
 ## Table of Contents
  
 1. [Introduction](#introduction)
-2. [How it Works](#how-it-works)
+2. [How it works](#how-it-works)
     1. [Criteria](#criteria)
     2. [Formulas](#formulas)
-3. [Installation](#installation)
+3. [How to use](#how-to-use)
 4. [Examples](#examples)
     1. [One Candle Pattern](#one-candle-pattern)
           1. [Code for Rising Window](#code-for-rising-window)
@@ -60,9 +60,13 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 
 *Note that the "High" and "Low", regardless of candle properties, are absolutes and will always be above or below the candle body*
 
-## Installation 
+## How to use 
 
-My indicator is published in TradingView's public library and requires no installation. Simply search for "Candlestick Pattern Identifier" and it will be published under the username "Depsi". Simply click on the indicator to add it to any chart. 
+### Configuration 
+
+My indicator is published in TradingView's public library and can be found by simply searching for "Candlestick Pattern Identifier" under the username "Depsi" 
+
+
 
 ## Examples 
 
