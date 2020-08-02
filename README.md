@@ -1,6 +1,6 @@
 ## Candlestick Pattern Identifier 
 
-The Candlestick Pattern Identifier is a technical indicator developed using Pine Script for TradingView. 
+The Candlestick Pattern Identifier is a technical indicator I developed using Pine Script for TradingView. 
 
 ## Table of Contents
  
@@ -8,7 +8,8 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
 2. [How it Works](#how-it-works)
     1. [Criteria](#criteria)
     2. [Formulas](#formulas)
-3. [Examples](#examples)
+3. [Installation](#installation)
+4. [Examples](#examples)
     1. [One Candle Pattern](#one-candle-pattern)
           1. [Code for Rising Window](#code-for-rising-window)
           2. [Example of Rising Window in Trading View](#example-of-rising-window-in-trading-view)
@@ -21,7 +22,6 @@ The Candlestick Pattern Identifier is a technical indicator developed using Pine
     4. [Four Candle Pattern](#four-candle-pattern)
           1. [Code for Three Line Strike](#code-for-three-line-strike)
           2. [Example of Three Line Strike in Trading View](#example-of-three-line-strike-in-trading-view)
-4. [Installation](#installation)
 
 ## Introduction 
 
@@ -60,6 +60,10 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 
 *Note that the "High" and "Low", regardless of candle properties, are absolutes and will always be above or below the candle body*
 
+## Installation 
+
+My indicator is published in TradingView's public library and requires no installation. Simply search for "Candlestick Pattern Identifier" and it will be published under the username "Depsi". Simply click on the indicator to add it to any chart. 
+
 ## Examples 
 
 The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
@@ -82,7 +86,7 @@ definition of a rising window and producer stronger and more valid signals.
 
 The third line defines that the highest point from yesterday is less than the lowest point of today, establishing a gap between the two candles.  
 
-##### Example of Rising Window in Trading View 
+##### Example of Rising Window in TradingView 
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/RisingWindowTR.png?raw=true" width="150" height="300"></p>
 
@@ -106,7 +110,7 @@ The third line defines that the close must be less than the yesterday's open. Th
 
 The fourth line defines that the open of today's candle must be lower than the lowest point of yesterdays candle which defines the lower limit for today's candle. 
 
-##### Example of Bullish Belt Hold in Trading View 
+##### Example of Bullish Belt Hold in TradingView 
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/BullishBeltHoldTR.png?raw=true" width="150" height="300"></p>
 
@@ -130,7 +134,7 @@ ago is larger than the candle today. Both of these lines establish the progressi
 
 The third and fourth line define that the high point of the preceeding day candle is lower than the low point of the candle after it. This is done from the candle two days ago to the candle today to establish the uptrend. 
 
-##### Example of Deliberation in Trading View 
+##### Example of Deliberation in TradingView 
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/DeliberationTR.png?raw=true" width="150" height="300"></p>
 
@@ -153,10 +157,8 @@ The second, third, and fourth line establish the uptrend by stating that the clo
 
 The fifth line defines the condition for the most recent candle to be much larger than the three candles prior to it by stating that the lower point from three days ago is greater than the lower point today.  
 
-##### Example of Three Line Strike in Trading View 
+##### Example of Three Line Strike in TradingView 
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeTR.png?raw=true" width="150" height="300"></p>
 
 Above is an example my indicator caught in Zoom Video Communications Inc. ($ZM) stock. ZM closed at $260.30 the day it was flagged and dropped to $246.54 four days later. A sell order at $260.30 would've made for a profitable trade. 
-
-## Installation 
