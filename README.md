@@ -147,7 +147,7 @@ The Three Line Strike, commonly known as a continaution pattern, is actually def
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeCode.png?raw=true"></p>
 
-The first line shows the declaration for the candles I am looking for. In this case, I'm looking for three green candles in the preceeding a red candle. 
+The first line shows the declaration for the candles I am looking for. In this case, I'm looking for three green candles preceeding a red candle. 
 
 The second, third, and fourth line establish the uptrend by stating that the close of the preceeding day is less than open of the day after. 
 
