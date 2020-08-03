@@ -71,7 +71,7 @@ Account creation is simple and can be done with an accompanying Google or Facebo
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRaccount.gif?raw=true" width="640" height="320"></p>
 
-After account creation, click on "Chart" on TradingView's home page.
+After creating an account, click on "Chart" on TradingView's home page.
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRstep1.gif?raw=true" width="640" height="320"></p>
 
@@ -79,11 +79,13 @@ Once inside of a chart, click on the "ƒx" icon to open the Indicators & Strateg
 
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRstep2.gif?raw=true" width="640" height="320"></p>
 
+The indicator will now be added to your chart in TradingView. 
+
 ## Features 
 
 Disabling and Enabling specific candlestick patterns for strategy optimization and better visibility of the chart: 
 
-<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRFeature.gif?raw=true" width="640" height="320"></p>
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRFeature.gif?raw=true" width="640" height="340"></p>
 
 Ability to change color, symbol, and location properties of individual indicators to highlight preferred patterns: 
 
