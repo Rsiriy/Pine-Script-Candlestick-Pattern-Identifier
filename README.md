@@ -2,6 +2,8 @@
 
 The Candlestick Pattern Identifier is a technical indicator I developed using Pine Script for TradingView. 
 
+This indicator is published in Trading View and can be seen here: https://www.tradingview.com/script/BqUM1Jrq-Candlestick-Pattern-Identifier/
+
 ## Table of Contents
  
 1. [Introduction](#introduction)
@@ -13,17 +15,18 @@ The Candlestick Pattern Identifier is a technical indicator I developed using Pi
 5. [Examples](#examples)
     1. [One Candle Pattern](#one-candle-pattern)
           1. [Code for Rising Window](#code-for-rising-window)
-          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-tradingview)
+          2. [Example of Rising Window in TradingView](#example-of-rising-window-in-tradingview)
     2. [Two Candle Pattern](#two-candle-pattern)
           1. [Code for Bullish Belt Hold](#code-for-rising-window)
-          2. [Example of Bullish Belt Hold in Trading View](#example-of-bullish-belt-hold-in-tradingview)
+          2. [Example of Bullish Belt Hold in TradingView](#example-of-bullish-belt-hold-in-tradingview)
     3. [Three Candle Pattern](#three-candle-pattern)
           1. [Code for Deliberation](#code-for-rising-window)
-          2. [Example of Deliberation in Trading View](#example-of-deliberation-in-tradingview)
+          2. [Example of Deliberation in TradingView](#example-of-deliberation-in-tradingview)
     4. [Four Candle Pattern](#four-candle-pattern)
           1. [Code for Three Line Strike](#code-for-three-line-strike)
-          2. [Example of Three Line Strike in Trading View](#example-of-three-line-strike-in-tradingview)
-
+          2. [Example of Three Line Strike in TradingView](#example-of-three-line-strike-in-tradingview)
+    6. [Acknowledgements](#acknowledgements)
+    
 ## Introduction 
 
 In the investing world, my approach to stock trading would probably have me labeled as a "chartist" as I try to derive as much information I can from a 
@@ -184,3 +187,7 @@ The fifth line defines the condition for the most recent candle to be much large
 <p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/ThreeLineStrikeTR.png?raw=true" width="150" height="300"></p>
 
 Above is an example my indicator caught in Zoom Video Communications Inc. ($ZM) stock. ZM closed at $260.30 the day it was flagged and dropped to $246.54 four days later. A sell order at $260.30 would've made for a profitable trade. 
+
+## Acknowledgements
+
+The research by Thomas Bulkowski in his book "Encyclopedia of Candlestick Patterns" was essential in the creation of this indicator. 
