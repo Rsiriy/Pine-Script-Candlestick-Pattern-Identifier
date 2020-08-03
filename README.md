@@ -25,7 +25,7 @@ This indicator is published in Trading View and can be seen here: https://www.tr
     4. [Four Candle Pattern](#four-candle-pattern)
           1. [Code for Three Line Strike](#code-for-three-line-strike)
           2. [Example of Three Line Strike in TradingView](#example-of-three-line-strike-in-tradingview)
-    6. [Acknowledgements](#acknowledgements)
+6. [Acknowledgements](#acknowledgements)
     
 ## Introduction 
 
