@@ -177,7 +177,7 @@ The first line shows the declaration for the candles I am looking for. In this c
 
 The second, third, and fourth line establish the uptrend by stating that the close of the preceeding day is less than open of the day after. 
 
-The fifth line defines the condition for the most recent candle to be much larger than the three candles prior to it by stating that the lower point from three days ago is greater than the lower point today.  
+The fifth line defines the condition for the most recent candle to be much larger than the three candles prior to it by stating close of today's candle is lower than the open of the candle from three days ago. 
 
 ##### Example of Three Line Strike in TradingView 
 
