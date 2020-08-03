@@ -13,16 +13,16 @@ The Candlestick Pattern Identifier is a technical indicator I developed using Pi
 5. [Examples](#examples)
     1. [One Candle Pattern](#one-candle-pattern)
           1. [Code for Rising Window](#code-for-rising-window)
-          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-trading-view)
+          2. [Example of Rising Window in Trading View](#example-of-rising-window-in-tradingview)
     2. [Two Candle Pattern](#two-candle-pattern)
           1. [Code for Bullish Belt Hold](#code-for-rising-window)
-          2. [Example of Bullish Belt Hold in Trading View](#example-of-bullish-belt-hold-in-trading-view)
+          2. [Example of Bullish Belt Hold in Trading View](#example-of-bullish-belt-hold-in-tradingview)
     3. [Three Candle Pattern](#three-candle-pattern)
           1. [Code for Deliberation](#code-for-rising-window)
-          2. [Example of Deliberation in Trading View](#example-of-deliberation-in-trading-view)
+          2. [Example of Deliberation in Trading View](#example-of-deliberation-in-tradingview)
     4. [Four Candle Pattern](#four-candle-pattern)
           1. [Code for Three Line Strike](#code-for-three-line-strike)
-          2. [Example of Three Line Strike in Trading View](#example-of-three-line-strike-in-trading-view)
+          2. [Example of Three Line Strike in Trading View](#example-of-three-line-strike-in-tradingview)
 
 ## Introduction 
 
@@ -66,9 +66,27 @@ Likewise, the formula "red_candle = (open > close)" would flag candles that look
 My indicator is published in TradingView's public library and requires no installation. But, a TradingView account is required to utilize all published indicators. 
 Account creation is simple and can be done with an accompanying Google or Facebook account as seen below. 
 
-![](TRaccount.gif)
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRaccount.gif?raw=true" width="640" height="320"></p>
+
+After account creation, click on "Chart" on TradingView's home page.
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRstep1.gif?raw=true" width="640" height="320"></p>
+
+Once inside of a chart, click on the "ƒx" icon to open the Indicators & Strategies menu and search for "Candlestick Pattern Identifier".
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRstep2.gif?raw=true" width="640" height="320"></p>
 
 ## Features 
+
+Disabling and Enabling specific candlestick patterns for strategy optimization and better visibility of the chart: 
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRFeature.gif?raw=true" width="640" height="320"></p>
+
+Ability to change color, symbol, and location properties of individual indicators to highlight preferred patterns: 
+
+<p align="center"><img src="https://github.com/Rsiriy/Pine-Script-Stock-Trading-Scripts/blob/master/images/TRFeature2.gif?raw=true" width="640" height="320"></p>
+
+## Examples 
 
 The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
 in the code each example for easier readibility. Patterns designated as "one candle", for example, are patterns that only require one candle to be detected. 
