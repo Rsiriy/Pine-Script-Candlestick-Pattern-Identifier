@@ -94,7 +94,7 @@ Ability to change color, symbol, and location properties of individual indicator
 ## Examples 
 
 The examples below are indicators I created for one candle, two candle, three candle, and four candle patterns. I included all relevant declarations 
-in the code each example for easier readibility. Patterns designated as "one candle", for example, are patterns that only require one candle to be detected. 
+in the code for each example for easier readibility. Patterns designated as "one candle", for example, are patterns that only require one candle to be detected. 
 
 ### One Candle Pattern
 
