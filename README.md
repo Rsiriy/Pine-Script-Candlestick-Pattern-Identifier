@@ -44,7 +44,7 @@ across both upward and downward markets. When using Bulkowski's research, I crea
 ### Criteria 
 
 The indicator holds formulas I created for 25 candlestick patterns and outputs them onto a chart in TradingView for any stock across any timeframe.
-All candlestick patterns were selected from Encyclopedia of Candlestick Patterns based on the criteria below 
+All candlestick patterns were selected from Encyclopedia of Candlestick Patterns by Thomas Bulkowski based on the criteria below 
 
 - Probability of success: 66% or higher in up or down markets **(Ensures 2/3 trades made on pattern have a chance of success)**
 - Frequency: 10 or higher **(Avoids rare patterns with small sample size)**
